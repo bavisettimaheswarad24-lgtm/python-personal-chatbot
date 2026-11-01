@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAHESH AI — Personal Python Chatbot</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+    <!-- Highlight.js for Python Code Syntax -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+    <!-- Marked.js for Markdown Formatting -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- CRT Scanline & Screen Vignette Overlay -->
+    <div class="crt-overlay"></div>
+    <div class="scanline"></div>
+
+    <!-- Intro Animation Screen (Smooth 2-second auto-skip) -->
+    <div id="intro-screen" class="intro-screen">
+        <div class="intro-content">
+            <div class="synth-orb-container">
+                <div class="synth-orb"></div>
+                <div class="synth-orb-ring"></div>
+            </div>
+            
+            <h1 class="intro-logo">
+                <span class="letter">M</span>
+                <span class="letter">A</span>
+                <span class="letter">H</span>
+                <span class="letter">E</span>
+                <span class="letter">S</span>
+                <span class="letter">H</span>
+                <span class="ai-badge">AI</span>
+            </h1>
+
+            <p class="intro-subtitle">Personal Python Chatbot by Mahesh</p>
+            <div class="intro-loader-bar"><div class="intro-loader-fill"></div></div>
+            <button id="skip-intro-btn" class="skip-intro">PRESS [SPACE] TO INITIALIZE &rarr;</button>
+        </div>
+    </div>
+
+    <!-- Main Workspace -->
+    <div class="app-container" id="app-container">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-group">
+                    <div class="pulse-dot"></div>
+                    <span class="brand-title">MAHESH<span>.AI</span></span>
+                </div>
+                <button class="icon-btn" id="theme-toggle" title="Toggle Light/Dark Theme">◐</button>
+            </div>
+
+            <button class="new-chat-btn" id="new-chat-btn">
+                <span class="btn-icon">+</span>
+                <span>NEW PYTHON CHAT</span>
+            </button>
+
+            <div class="history-section">
+                <div class="history-label">POPULAR PYTHON QUESTIONS</div>
+                <div class="history-list" id="quick-links-list">
+                    <div class="history-item" data-q="Difference between list and tuple">
+                        <span class="history-dot"></span>
+                        <span class="history-text">List vs Tuple</span>
+                    </div>
+                    <div class="history-item" data-q="What is a decorator and how do I use it?">
+                        <span class="history-dot"></span>
+                        <span class="history-text">Decorators</span>
+                    </div>
+                    <div class="history-item" data-q="What is the GIL in Python?">
+                        <span class="history-dot"></span>
+                        <span class="history-text">Global Interpreter Lock</span>
+                    </div>
+                    <div class="history-item" data-q="Why not use mutable default arguments like def f(items=[])?">
+                        <span class="history-dot"></span>
+                        <span class="history-text">Mutable Defaults</span>
+                    </div>
+                    <div class="history-item" data-q="What is the difference between shallow copy and deep copy?">
+                        <span class="history-dot"></span>
+                        <span class="history-text">Shallow vs Deep Copy</span>
+                    </div>
+                    <div class="history-item" data-q="What is a generator and yield?">
+                        <span class="history-dot"></span>
+                        <span class="history-text">Generators & Yield</span>
+                    </div>
+                    <div class="history-item" data-q="What is the difference between __new__ and __init__?">
+                        <span class="history-dot"></span>
+                        <span class="history-text">__new__ vs __init__</span>
+                    </div>
+                    <div class="history-item" data-q="How does async and await work?">
+                        <span class="history-dot"></span>
+                        <span class="history-text">Asyncio & Coroutines</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="system-status">
+                    <span class="status-indicator"></span>
+                    <span class="status-text">PYTHON TF-IDF ENGINE: ONLINE</span>
+                </div>
+                <p class="creator-tag">ENGINEERED BY <strong>MAHESH</strong></p>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-workspace">
+            
+            <header class="top-nav">
+                <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+                <div class="active-model-badge">PERSONAL PYTHON Q&A ASSISTANT</div>
+                <div class="hud-stats">LATENCY: <span id="ping-stat">&lt; 1ms</span></div>
+            </header>
+
+            <div class="messages-viewport" id="messages-viewport">
+                
+                <!-- Landing Screen -->
+                <div class="landing-hero" id="landing-hero">
+                    <div class="hero-chip">PYTHON Q&A ASSISTANT READY</div>
+                    <h2 class="hero-title">WELCOME TO MAHESH AI</h2>
+                    <p class="hero-tagline">Ask any Python programming question below</p>
+
+                    <!-- 4 Clear Python Starter Cards -->
+                    <div class="prompt-grid">
+                        <div class="prompt-card" data-prompt="What is the difference between a list and a tuple?">
+                            <div class="card-icon">📌</div>
+                            <h3>List vs Tuple</h3>
+                            <p>What is the difference and when should I use which?</p>
+                        </div>
+                        <div class="prompt-card" data-prompt="How do decorators work in Python?">
+                            <div class="card-icon">⚡</div>
+                            <h3>How Decorators Work</h3>
+                            <p>How to write and use wrapper functions with @.</p>
+                        </div>
+                        <div class="prompt-card" data-prompt="What is the GIL in Python and why does it exist?">
+                            <div class="card-icon">🔒</div>
+                            <h3>Global Interpreter Lock (GIL)</h3>
+                            <p>Why multithreading doesn't speed up CPU-bound code.</p>
+                        </div>
+                        <div class="prompt-card" data-prompt="Why shouldn't I use def f(items=[]) as default argument?">
+                            <div class="card-icon">⚠️</div>
+                            <h3>Mutable Default Arguments</h3>
+                            <p>The shared memory trap and how to use None as a sentinel.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Messages List -->
+                <div class="messages-list" id="messages-list"></div>
+
+                <!-- Typing Indicator -->
+                <div class="typing-indicator" id="typing-indicator">
+                    <div class="synth-avatar">M</div>
+                    <div class="typing-bubble">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input-container">
+                <form id="chat-form" class="neon-input-box">
+                    <div class="terminal-prefix">&gt;</div>
+                    <textarea 
+                        id="user-input" 
+                        rows="1" 
+                        placeholder="Ask a Python question (e.g., 'How to reverse a string?', 'What is __init__?')..." 
+                        autocomplete="off"
+                        required></textarea>
+                    <button type="submit" id="send-btn" class="send-btn" title="Send (Enter)">
+                        <span class="send-arrow">&#10148;</span>
+                    </button>
+                </form>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,810 @@
+[
+  {
+    "topic": "Python basics",
+    "questions": [
+      "What is Python?",
+      "Tell me about Python",
+      "Why use Python?"
+    ],
+    "keywords": [
+      "python",
+      "language",
+      "introduction",
+      "about"
+    ],
+    "answer": "Python is a high-level, interpreted, general-purpose programming language known for readable syntax. It supports procedural, object-oriented and functional styles, and is widely used for web development, data science, automation, scripting and AI."
+  },
+  {
+    "topic": "Variables",
+    "questions": [
+      "How do I create a variable?",
+      "What is a variable in Python?",
+      "How to declare a variable?"
+    ],
+    "keywords": [
+      "variable",
+      "declare",
+      "assign",
+      "assignment"
+    ],
+    "answer": "Variables are created by assigning a value with `=`. No type declaration is needed because Python is dynamically typed.\n\n```python\nname = \"Mahesh\"\nage = 25\nprice = 9.99\n```"
+  },
+  {
+    "topic": "Data types",
+    "questions": [
+      "What are the data types in Python?",
+      "List Python data types",
+      "How do I check the type of a variable?"
+    ],
+    "keywords": [
+      "data",
+      "type",
+      "types",
+      "int",
+      "float",
+      "str",
+      "bool",
+      "check"
+    ],
+    "answer": "Built-in types include int, float, complex, str, bool, list, tuple, dict, set, frozenset and NoneType. Check a value's type with `type()` or `isinstance()`.\n\n```python\ntype(42)              # <class 'int'>\nisinstance(3.5, float)  # True\n```"
+  },
+  {
+    "topic": "Lists",
+    "questions": [
+      "What is a list?",
+      "How do I create a list?",
+      "How to add an item to a list?",
+      "How do I remove an element from a list?"
+    ],
+    "keywords": [
+      "list",
+      "append",
+      "remove",
+      "pop",
+      "insert",
+      "array"
+    ],
+    "answer": "A list is an ordered, mutable collection.\n\n```python\nfruits = [\"apple\", \"banana\"]\nfruits.append(\"mango\")     # add to end\nfruits.insert(0, \"kiwi\")   # add at index\nfruits.remove(\"banana\")    # remove by value\nlast = fruits.pop()        # remove and return last item\n```"
+  },
+  {
+    "topic": "Tuples",
+    "questions": [
+      "What is a tuple?",
+      "Difference between list and tuple",
+      "List vs tuple"
+    ],
+    "keywords": [
+      "tuple",
+      "immutable",
+      "difference",
+      "list"
+    ],
+    "answer": "A tuple is an ordered, immutable collection: `point = (3, 4)`. Lists are mutable (you can change them after creation); tuples are not. Tuples are slightly faster, can be used as dictionary keys, and signal that the data should not change."
+  },
+  {
+    "topic": "Dictionaries",
+    "questions": [
+      "What is a dictionary?",
+      "How do I create a dict?",
+      "How to loop through a dictionary?",
+      "How to get a value from a dictionary?"
+    ],
+    "keywords": [
+      "dictionary",
+      "dict",
+      "key",
+      "value",
+      "items",
+      "get"
+    ],
+    "answer": "A dictionary stores key-value pairs.\n\n```python\nuser = {\"name\": \"Asha\", \"age\": 30}\nuser[\"city\"] = \"Melbourne\"         # add/update\nuser.get(\"email\", \"n/a\")           # safe lookup with default\nfor key, value in user.items():\n    print(key, value)\n```"
+  },
+  {
+    "topic": "Sets",
+    "questions": [
+      "What is a set?",
+      "How to remove duplicates from a list?",
+      "Set operations in Python"
+    ],
+    "keywords": [
+      "set",
+      "duplicates",
+      "unique",
+      "union",
+      "intersection"
+    ],
+    "answer": "A set is an unordered collection of unique items.\n\n```python\nnums = [1, 2, 2, 3]\nunique = list(set(nums))   # remove duplicates\na, b = {1, 2, 3}, {2, 3, 4}\na | b   # union {1, 2, 3, 4}\na & b   # intersection {2, 3}\na - b   # difference {1}\n```"
+  },
+  {
+    "topic": "Strings",
+    "questions": [
+      "How do I work with strings?",
+      "How to reverse a string?",
+      "How to split a string?",
+      "String methods in Python"
+    ],
+    "keywords": [
+      "string",
+      "str",
+      "reverse",
+      "split",
+      "join",
+      "upper",
+      "lower",
+      "replace"
+    ],
+    "answer": "Strings are immutable sequences of characters.\n\n```python\ns = \"Hello World\"\ns.lower(), s.upper()\ns.split()              # ['Hello', 'World']\n\"-\".join([\"a\", \"b\"])   # 'a-b'\ns.replace(\"World\", \"Py\")\ns[::-1]                # reverse\n```"
+  },
+  {
+    "topic": "f-strings",
+    "questions": [
+      "How do I format a string?",
+      "What is an f-string?",
+      "String formatting in Python"
+    ],
+    "keywords": [
+      "format",
+      "formatting",
+      "fstring",
+      "f-string",
+      "interpolation"
+    ],
+    "answer": "Use f-strings (Python 3.6+) to embed expressions in strings.\n\n```python\nname, score = \"Ravi\", 92.456\nprint(f\"{name} scored {score:.2f}\")   # Ravi scored 92.46\n```"
+  },
+  {
+    "topic": "If statements",
+    "questions": [
+      "How do I write an if statement?",
+      "How to use if else in Python?",
+      "Conditional statements"
+    ],
+    "keywords": [
+      "if",
+      "else",
+      "elif",
+      "condition",
+      "conditional"
+    ],
+    "answer": "Use `if`, `elif` and `else`. Indentation defines the block.\n\n```python\nif marks >= 90:\n    grade = \"A\"\nelif marks >= 75:\n    grade = \"B\"\nelse:\n    grade = \"C\"\n```"
+  },
+  {
+    "topic": "For loops",
+    "questions": [
+      "How do I write a for loop?",
+      "How to loop over a list?",
+      "How does range work?",
+      "How to get index in a loop?"
+    ],
+    "keywords": [
+      "for",
+      "loop",
+      "range",
+      "iterate",
+      "enumerate",
+      "index"
+    ],
+    "answer": "A `for` loop iterates over any iterable.\n\n```python\nfor i in range(5):          # 0..4\n    print(i)\nfor idx, item in enumerate([\"a\", \"b\"]):\n    print(idx, item)\n```"
+  },
+  {
+    "topic": "While loops",
+    "questions": [
+      "How do I write a while loop?",
+      "What is break and continue?",
+      "How to stop a loop?"
+    ],
+    "keywords": [
+      "while",
+      "loop",
+      "break",
+      "continue",
+      "stop"
+    ],
+    "answer": "A `while` loop runs while its condition is true. `break` exits the loop; `continue` skips to the next iteration.\n\n```python\nn = 0\nwhile n < 10:\n    n += 1\n    if n % 2 == 0:\n        continue\n    if n > 7:\n        break\n    print(n)\n```"
+  },
+  {
+    "topic": "Functions",
+    "questions": [
+      "How do I define a function?",
+      "What is a function?",
+      "How to return a value from a function?",
+      "Default arguments in Python"
+    ],
+    "keywords": [
+      "function",
+      "def",
+      "return",
+      "arguments",
+      "parameters",
+      "default"
+    ],
+    "answer": "Define functions with `def`.\n\n```python\ndef greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"\n\ngreet(\"Sam\")            # 'Hello, Sam!'\ngreet(\"Sam\", \"Hi\")      # 'Hi, Sam!'\n```"
+  },
+  {
+    "topic": "*args and **kwargs",
+    "questions": [
+      "What are *args and **kwargs?",
+      "How to pass variable number of arguments?"
+    ],
+    "keywords": [
+      "args",
+      "kwargs",
+      "variable",
+      "arguments",
+      "keyword"
+    ],
+    "answer": "`*args` collects extra positional arguments into a tuple; `**kwargs` collects extra keyword arguments into a dict.\n\n```python\ndef show(*args, **kwargs):\n    print(args, kwargs)\n\nshow(1, 2, a=3)   # (1, 2) {'a': 3}\n```"
+  },
+  {
+    "topic": "Lambda functions",
+    "questions": [
+      "What is a lambda function?",
+      "How to use lambda?",
+      "Anonymous functions in Python"
+    ],
+    "keywords": [
+      "lambda",
+      "anonymous",
+      "sort",
+      "key"
+    ],
+    "answer": "A lambda is a small anonymous single-expression function, often used as a sort key or with map/filter.\n\n```python\nsquare = lambda x: x * x\npeople.sort(key=lambda p: p[\"age\"])\n```"
+  },
+  {
+    "topic": "List comprehensions",
+    "questions": [
+      "What is a list comprehension?",
+      "How to write a list comprehension?",
+      "Short way to create a list"
+    ],
+    "keywords": [
+      "comprehension",
+      "list",
+      "filter",
+      "map",
+      "shorthand"
+    ],
+    "answer": "A list comprehension builds a list in one expression.\n\n```python\nsquares = [x * x for x in range(10)]\nevens = [x for x in range(20) if x % 2 == 0]\nlookup = {w: len(w) for w in [\"hi\", \"hey\"]}   # dict comprehension\n```"
+  },
+  {
+    "topic": "Classes and objects",
+    "questions": [
+      "How do I create a class?",
+      "What is a class in Python?",
+      "What is OOP?",
+      "What is __init__?",
+      "What is self?"
+    ],
+    "keywords": [
+      "class",
+      "object",
+      "oop",
+      "init",
+      "self",
+      "constructor",
+      "instance"
+    ],
+    "answer": "A class is a blueprint for objects. `__init__` is the initializer, and `self` refers to the current instance.\n\n```python\nclass Dog:\n    def __init__(self, name):\n        self.name = name\n    def bark(self):\n        return f\"{self.name} says woof\"\n\nd = Dog(\"Rex\")\nd.bark()\n```"
+  },
+  {
+    "topic": "Inheritance",
+    "questions": [
+      "What is inheritance?",
+      "How do I inherit from a class?",
+      "What does super() do?"
+    ],
+    "keywords": [
+      "inheritance",
+      "inherit",
+      "super",
+      "parent",
+      "child",
+      "subclass"
+    ],
+    "answer": "A child class inherits attributes and methods from a parent; `super()` calls the parent's methods.\n\n```python\nclass Animal:\n    def __init__(self, name):\n        self.name = name\n\nclass Cat(Animal):\n    def __init__(self, name, indoor):\n        super().__init__(name)\n        self.indoor = indoor\n```"
+  },
+  {
+    "topic": "Exception handling",
+    "questions": [
+      "How do I handle errors?",
+      "How to use try except?",
+      "What is exception handling?",
+      "How to raise an exception?"
+    ],
+    "keywords": [
+      "exception",
+      "error",
+      "try",
+      "except",
+      "finally",
+      "raise",
+      "handle"
+    ],
+    "answer": "Use try/except to catch errors, `finally` for cleanup, and `raise` to signal one.\n\n```python\ntry:\n    result = 10 / int(value)\nexcept ZeroDivisionError:\n    print(\"Cannot divide by zero\")\nexcept ValueError as e:\n    print(\"Bad input:\", e)\nfinally:\n    print(\"Done\")\n\nif age < 0:\n    raise ValueError(\"age must be positive\")\n```"
+  },
+  {
+    "topic": "File handling",
+    "questions": [
+      "How do I read a file?",
+      "How to write to a file?",
+      "How to open a file in Python?"
+    ],
+    "keywords": [
+      "file",
+      "read",
+      "write",
+      "open",
+      "with",
+      "append"
+    ],
+    "answer": "Use `open()` inside a `with` block so the file closes automatically.\n\n```python\nwith open(\"notes.txt\", \"w\") as f:\n    f.write(\"Hello\\n\")\n\nwith open(\"notes.txt\") as f:\n    for line in f:\n        print(line.strip())\n```"
+  },
+  {
+    "topic": "Modules and imports",
+    "questions": [
+      "How do I import a module?",
+      "What is a module?",
+      "How to import a function from another file?"
+    ],
+    "keywords": [
+      "import",
+      "module",
+      "from",
+      "package",
+      "library"
+    ],
+    "answer": "A module is a .py file; a package is a folder of modules.\n\n```python\nimport math\nfrom datetime import date\nimport numpy as np\nfrom utils import helper   # from your own utils.py\n```"
+  },
+  {
+    "topic": "pip and packages",
+    "questions": [
+      "How do I install a package?",
+      "What is pip?",
+      "How to install libraries in Python?"
+    ],
+    "keywords": [
+      "pip",
+      "install",
+      "package",
+      "library",
+      "requirements"
+    ],
+    "answer": "pip is Python's package installer.\n\n```bash\npip install requests\npip install -r requirements.txt\npip freeze > requirements.txt\npip uninstall requests\n```"
+  },
+  {
+    "topic": "Virtual environments",
+    "questions": [
+      "What is a virtual environment?",
+      "How to create a venv?",
+      "How to activate virtual environment?"
+    ],
+    "keywords": [
+      "virtual",
+      "environment",
+      "venv",
+      "activate",
+      "isolate"
+    ],
+    "answer": "A virtual environment isolates a project's packages.\n\n```bash\npython -m venv .venv\nsource .venv/bin/activate     # macOS/Linux\n.venv\\Scripts\\activate        # Windows\ndeactivate\n```"
+  },
+  {
+    "topic": "Input and output",
+    "questions": [
+      "How do I take user input?",
+      "How to print in Python?",
+      "How to read input from keyboard?"
+    ],
+    "keywords": [
+      "input",
+      "print",
+      "output",
+      "keyboard",
+      "user"
+    ],
+    "answer": "`input()` reads a line as a string; `print()` writes output.\n\n```python\nage = int(input(\"Enter age: \"))\nprint(\"You are\", age, \"years old\")\n```"
+  },
+  {
+    "topic": "Type conversion",
+    "questions": [
+      "How do I convert a string to an integer?",
+      "How to convert types?",
+      "Type casting in Python"
+    ],
+    "keywords": [
+      "convert",
+      "conversion",
+      "cast",
+      "casting",
+      "int",
+      "str",
+      "float"
+    ],
+    "answer": "Use the type constructors.\n\n```python\nint(\"42\")       # 42\nfloat(\"3.5\")    # 3.5\nstr(100)        # '100'\nlist(\"abc\")     # ['a', 'b', 'c']\n```"
+  },
+  {
+    "topic": "Decorators",
+    "questions": [
+      "What is a decorator?",
+      "How do decorators work?",
+      "How to write a decorator?"
+    ],
+    "keywords": [
+      "decorator",
+      "wrapper",
+      "@",
+      "wraps"
+    ],
+    "answer": "A decorator wraps a function to add behaviour without changing its code.\n\n```python\nfrom functools import wraps\n\ndef log(func):\n    @wraps(func)\n    def wrapper(*args, **kwargs):\n        print(\"Calling\", func.__name__)\n        return func(*args, **kwargs)\n    return wrapper\n\n@log\ndef add(a, b):\n    return a + b\n```"
+  },
+  {
+    "topic": "Generators",
+    "questions": [
+      "What is a generator?",
+      "What does yield do?",
+      "Generator vs list"
+    ],
+    "keywords": [
+      "generator",
+      "yield",
+      "iterator",
+      "lazy",
+      "memory"
+    ],
+    "answer": "A generator produces values lazily with `yield`, using little memory.\n\n```python\ndef count_up(n):\n    i = 0\n    while i < n:\n        yield i\n        i += 1\n\nfor x in count_up(3):\n    print(x)\n\ntotal = sum(x * x for x in range(1_000_000))   # generator expression\n```"
+  },
+  {
+    "topic": "Sorting",
+    "questions": [
+      "How do I sort a list?",
+      "Difference between sort and sorted",
+      "How to sort in descending order?"
+    ],
+    "keywords": [
+      "sort",
+      "sorted",
+      "order",
+      "descending",
+      "reverse"
+    ],
+    "answer": "`list.sort()` sorts in place; `sorted()` returns a new list.\n\n```python\nnums = [3, 1, 2]\nnums.sort()                        # [1, 2, 3]\nsorted(nums, reverse=True)         # [3, 2, 1]\nsorted(words, key=len)             # by length\n```"
+  },
+  {
+    "topic": "Mutable vs immutable",
+    "questions": [
+      "What is mutable and immutable?",
+      "Which types are immutable?"
+    ],
+    "keywords": [
+      "mutable",
+      "immutable",
+      "change"
+    ],
+    "answer": "Mutable objects can change after creation (list, dict, set). Immutable ones cannot (int, float, str, tuple, frozenset). Watch out for mutable default arguments: use `def f(items=None)` instead of `def f(items=[])`."
+  },
+  {
+    "topic": "== vs is",
+    "questions": [
+      "What is the difference between == and is?",
+      "When to use is?"
+    ],
+    "keywords": [
+      "is",
+      "equal",
+      "equality",
+      "identity",
+      "compare"
+    ],
+    "answer": "`==` compares values; `is` checks whether two names refer to the same object. Use `is` mainly for `None`: `if x is None:`."
+  },
+  {
+    "topic": "PEP 8",
+    "questions": [
+      "What is PEP 8?",
+      "Python coding style guide",
+      "Naming conventions in Python"
+    ],
+    "keywords": [
+      "pep",
+      "pep8",
+      "style",
+      "convention",
+      "naming"
+    ],
+    "answer": "PEP 8 is Python's style guide: 4-space indentation, snake_case for functions and variables, PascalCase for classes, UPPER_CASE for constants, and lines around 79-99 characters. Tools like `black` and `ruff` apply it automatically."
+  },
+  {
+    "topic": "Mutable default arguments",
+    "questions": [
+      "Why shouldn't I use a list as a default argument in a function?",
+      "Why not use mutable default arguments?",
+      "Why is def f(items=[]) bad in Python?",
+      "Dangerous default value in Python",
+      "Default list parameter issue"
+    ],
+    "keywords": [
+      "mutable",
+      "default",
+      "argument",
+      "parameter",
+      "list",
+      "sentinel",
+      "none",
+      "trap",
+      "shared"
+    ],
+    "answer": "Default arguments are evaluated once when the function is defined, NOT each time it is called. If you use a mutable object like a list or dict (`def f(items=[])`), all function calls share the exact same object in memory.\n\nThe fix is to use `None` as a sentinel value:\n\n```python\ndef add_item(item, items=None):\n    if items is None:\n        items = []\n    items.append(item)\n    return items\n```"
+  },
+  {
+    "topic": "Global Interpreter Lock (GIL)",
+    "questions": [
+      "What is the GIL in Python?",
+      "Why doesn't multithreading make Python faster?",
+      "How does the Global Interpreter Lock work?",
+      "Multithreading vs multiprocessing in Python"
+    ],
+    "keywords": [
+      "gil",
+      "lock",
+      "thread",
+      "threading",
+      "multiprocessing",
+      "cpu",
+      "concurrency",
+      "interpreter"
+    ],
+    "answer": "The Global Interpreter Lock (GIL) is a mutex in CPython that prevents multiple native threads from executing Python bytecode simultaneously. This means CPU-bound tasks do not benefit from multithreading.\n\n```python\n# For CPU-bound tasks, use multiprocessing instead of threading:\nfrom multiprocessing import Pool\nwith Pool() as p:\n    results = p.map(heavy_func, data)\n```"
+  },
+  {
+    "topic": "Context managers and with",
+    "questions": [
+      "What is a context manager?",
+      "How does the with statement work?",
+      "What are __enter__ and __exit__?",
+      "How to write a custom context manager?"
+    ],
+    "keywords": [
+      "context",
+      "manager",
+      "with",
+      "enter",
+      "exit",
+      "resource",
+      "cleanup"
+    ],
+    "answer": "Context managers handle setup and teardown automatically using `__enter__` and `__exit__`, ensuring resources like files and locks are released even if an error occurs.\n\n```python\nclass Timer:\n    def __enter__(self):\n        print(\"Start\")\n        return self\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Finished cleanup\")\n\nwith Timer():\n    print(\"Running code\")\n```"
+  },
+  {
+    "topic": "Shallow vs deep copy",
+    "questions": [
+      "What is the difference between shallow copy and deep copy?",
+      "How do I deep copy an object?",
+      "copy vs deepcopy in Python"
+    ],
+    "keywords": [
+      "copy",
+      "deepcopy",
+      "shallow",
+      "nested",
+      "clone",
+      "duplicate"
+    ],
+    "answer": "A shallow copy (`copy.copy(x)`) constructs a new container, but inserts references to the original child objects. A deep copy (`copy.deepcopy(x)`) recursively clones both the container and all nested objects.\n\n```python\nimport copy\noriginal = [[1, 2], [3, 4]]\nshallow = copy.copy(original)      # changing shallow[0][0] alters original[0][0]\ndeep = copy.deepcopy(original)     # completely independent clone\n```"
+  },
+  {
+    "topic": "__new__ vs __init__",
+    "questions": [
+      "What is the difference between __new__ and __init__?",
+      "How is an object created in Python?",
+      "When to use __new__?"
+    ],
+    "keywords": [
+      "new",
+      "init",
+      "creation",
+      "instantiation",
+      "constructor",
+      "singleton"
+    ],
+    "answer": "`__new__` is the actual constructor that allocates and returns a new instance of the class (a static method taking `cls`). `__init__` is the initializer that configures the instance after creation (takes `self`). `__new__` is used when subclassing immutable types or implementing Singletons."
+  },
+  {
+    "topic": "Asyncio and concurrency",
+    "questions": [
+      "How does async and await work in Python?",
+      "What is asyncio?",
+      "How to write asynchronous code in Python?"
+    ],
+    "keywords": [
+      "async",
+      "await",
+      "asyncio",
+      "coroutine",
+      "event",
+      "loop",
+      "asynchronous",
+      "io"
+    ],
+    "answer": "`asyncio` provides cooperative multitasking using an event loop and coroutines. When a task awaits I/O with `await`, Python pauses that coroutine and lets others run.\n\n```python\nimport asyncio\n\nasync def fetch_data():\n    await asyncio.sleep(1)  # non-blocking wait\n    return {\"data\": 123}\n\nasync def main():\n    result = await fetch_data()\n    print(result)\n\nasyncio.run(main())\n```"
+  },
+  {
+    "topic": "__str__ vs __repr__",
+    "questions": [
+      "What is the difference between __str__ and __repr__?",
+      "When to use __str__ vs __repr__?",
+      "String representation of objects"
+    ],
+    "keywords": [
+      "str",
+      "repr",
+      "representation",
+      "dunder",
+      "magic",
+      "print",
+      "debug"
+    ],
+    "answer": "`__str__` returns an informal, readable string for end users (`print(obj)`). `__repr__` returns an unambiguous, formal string for developers (`repr(obj)`), ideally valid Python code that could recreate the object.\n\n```python\nclass Point:\n    def __init__(self, x, y):\n        self.x, self.y = x, y\n    def __repr__(self):\n        return f\"Point({self.x}, {self.y})\"\n    def __str__(self):\n        return f\"({self.x}, {self.y})\"\n```"
+  },
+  {
+    "topic": "Functional iteration (no loops)",
+    "questions": [
+      "How do I iterate without using a for loop or while loop?",
+      "How to loop without a loop?",
+      "Alternatives to for loop in Python",
+      "Iteration without loops in Python",
+      "How to avoid loops in Python?",
+      "Functional iteration in Python"
+    ],
+    "keywords": [
+      "functional",
+      "iteration",
+      "map",
+      "filter",
+      "reduce",
+      "recursion",
+      "recursive",
+      "comprehension",
+      "itertools",
+      "without",
+      "avoid",
+      "loop"
+    ],
+    "answer": "Python offers several ways to process sequences **without explicit `for` or `while` loops**:\n\n**1. `map()` / `filter()` — built-in higher-order functions**\n```python\nnums = [1, 2, 3, 4, 5]\nsquares = list(map(lambda x: x * x, nums))   # [1, 4, 9, 16, 25]\nevens   = list(filter(lambda x: x % 2 == 0, nums))  # [2, 4]\n```\n\n**2. List / dict / set comprehensions** (single-expression, no explicit loop keyword needed logically)\n```python\nsquares = [x * x for x in nums]\n```\n\n**3. `functools.reduce()`**\n```python\nfrom functools import reduce\ntotal = reduce(lambda acc, x: acc + x, nums, 0)  # 15\n```\n\n**4. Recursion**\n```python\ndef factorial(n):\n    return 1 if n <= 1 else n * factorial(n - 1)\n```\n\n**5. `itertools` utilities**\n```python\nimport itertools\nfor pair in itertools.combinations([1, 2, 3], 2):\n    print(pair)\n```\n\nUse these functional patterns for cleaner, more declarative code."
+  },
+  {
+    "topic": "Python built-in exceptions and TypeError",
+    "questions": [
+      "Why does print(1 + '2') throw an error?",
+      "What is a TypeError in Python?",
+      "What is a ValueError?",
+      "What is a KeyError?",
+      "What is an IndexError?",
+      "What is ZeroDivisionError?",
+      "Common Python errors explained",
+      "Built-in exceptions in Python"
+    ],
+    "keywords": [
+      "typeerror",
+      "valueerror",
+      "keyerror",
+      "indexerror",
+      "zerodivisionerror",
+      "attributeerror",
+      "nameerror",
+      "runtimeerror",
+      "exception",
+      "error",
+      "type_error",
+      "value_error",
+      "key_error",
+      "index_error",
+      "zero_division_error",
+      "builtin",
+      "built_in",
+      "throw",
+      "raise"
+    ],
+    "answer": "Python's most common built-in exceptions:\n\n| Exception | Cause | Example |\n|---|---|---|\n| `TypeError` | Wrong type in operation | `1 + '2'` → can't add int and str |\n| `ValueError` | Right type, bad value | `int('abc')` |\n| `KeyError` | Dict key missing | `d['missing']` |\n| `IndexError` | List index out of range | `lst[99]` on short list |\n| `ZeroDivisionError` | Divide by zero | `10 / 0` |\n| `AttributeError` | Object has no such attribute | `None.split()` |\n| `NameError` | Variable not defined | `print(x)` before assignment |\n\n```python\ntry:\n    result = 1 + '2'          # TypeError!\nexcept TypeError as e:\n    print(f'Type mismatch: {e}')\n\ntry:\n    val = int('not-a-number') # ValueError!\nexcept ValueError:\n    print('Cannot convert to int')\n```\n\nUse `isinstance()` to guard types before operations: `if isinstance(x, int): ...`"
+  },
+  {
+    "topic": "Asyncio with exceptions",
+    "questions": [
+      "How to handle exceptions inside asyncio coroutines?",
+      "Exception handling in async Python",
+      "Try except inside async function",
+      "Error handling in asyncio tasks",
+      "Async await with try except"
+    ],
+    "keywords": [
+      "async",
+      "await",
+      "asyncio",
+      "exception",
+      "error",
+      "try",
+      "except",
+      "coroutine",
+      "task",
+      "gather",
+      "handle"
+    ],
+    "answer": "Exception handling inside `async` coroutines works exactly like in regular functions — use `try/except` inside the coroutine body.\n\n```python\nimport asyncio\n\nasync def risky_fetch(url):\n    try:\n        await asyncio.sleep(0.1)   # simulate I/O\n        if url == 'bad':\n            raise ValueError(f'Bad URL: {url}')\n        return f'data from {url}'\n    except ValueError as e:\n        print(f'Caught inside coroutine: {e}')\n        return None\n\nasync def main():\n    # asyncio.gather with return_exceptions=True prevents one failure\n    # from cancelling all other tasks\n    results = await asyncio.gather(\n        risky_fetch('good'),\n        risky_fetch('bad'),\n        return_exceptions=True,\n    )\n    for r in results:\n        if isinstance(r, Exception):\n            print(f'Task failed: {r}')\n        else:\n            print(f'Got: {r}')\n\nasyncio.run(main())\n```\n\n**Key points:**\n- `try/except` works normally inside `async def`.\n- `asyncio.gather(..., return_exceptions=True)` captures per-task errors without aborting siblings.\n- `asyncio.Task.add_done_callback()` or `task.exception()` let you inspect errors after the fact."
+  },
+  {
+    "topic": "Garbage collection and circular references",
+    "questions": [
+      "How does garbage collection work in Python?",
+      "What are circular references in Python?",
+      "How does Python free memory?",
+      "Reference counting in Python",
+      "gc module in Python"
+    ],
+    "keywords": [
+      "garbage",
+      "collection",
+      "gc",
+      "circular",
+      "reference",
+      "memory",
+      "refcount",
+      "reference_counting",
+      "del",
+      "weak",
+      "weakref"
+    ],
+    "answer": "Python uses **reference counting** as its primary memory management strategy. Each object tracks how many names point to it; when the count drops to zero the object is freed immediately.\n\n**Circular references** break plain reference counting:\n```python\na = []\nb = [a]\na.append(b)   # a → b → a: neither ever reaches count 0\n```\nPython's **cyclic garbage collector** (`gc` module) periodically detects and collects such cycles.\n\n```python\nimport gc\ngc.collect()          # manually trigger collection\nprint(gc.get_count()) # (gen0, gen1, gen2) object counts\n\n# To avoid cycles use weakref:\nimport weakref\nclass Node:\n    def __init__(self, parent=None):\n        self.parent = weakref.ref(parent) if parent else None\n```\n\n**Tips:**\n- Use `weakref.ref()` for back-pointers in tree/graph structures.\n- Use `del` to explicitly drop references.\n- `__slots__` reduces per-object overhead and can help GC throughput."
+  },
+  {
+    "topic": "Sockets and network basics",
+    "questions": [
+      "How do sockets work in Python?",
+      "How to create a TCP server in Python?",
+      "How to send data over network in Python?",
+      "Python socket programming",
+      "How to make a simple HTTP request?"
+    ],
+    "keywords": [
+      "socket",
+      "network",
+      "tcp",
+      "udp",
+      "server",
+      "client",
+      "bind",
+      "listen",
+      "connect",
+      "send",
+      "recv",
+      "http",
+      "requests",
+      "port"
+    ],
+    "answer": "**Low-level: `socket` module**\n```python\nimport socket\n\n# --- TCP Server ---\nwith socket.socket(socket.AF_INET, socket.SOCK_STREAM) as srv:\n    srv.bind(('localhost', 9999))\n    srv.listen(1)\n    conn, addr = srv.accept()\n    with conn:\n        data = conn.recv(1024)\n        conn.sendall(b'Echo: ' + data)\n\n# --- TCP Client ---\nwith socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:\n    s.connect(('localhost', 9999))\n    s.sendall(b'Hello')\n    print(s.recv(1024))\n```\n\n**High-level HTTP: `requests` library** (recommended for most use-cases)\n```python\nimport requests\nresp = requests.get('https://api.github.com')\nprint(resp.status_code, resp.json())\n\nresp = requests.post('https://httpbin.org/post', json={'key': 'val'})\n```\n\nInstall with `pip install requests`. For async HTTP, consider `httpx` or `aiohttp`."
+  },
+  {
+    "topic": "Pandas data manipulation basics",
+    "questions": [
+      "How do I use pandas in Python?",
+      "How to filter rows in a DataFrame?",
+      "How to read a CSV file with pandas?",
+      "Basic pandas operations",
+      "How to group data in pandas?",
+      "DataFrame operations in Python"
+    ],
+    "keywords": [
+      "pandas",
+      "dataframe",
+      "df",
+      "csv",
+      "read_csv",
+      "groupby",
+      "filter",
+      "merge",
+      "apply",
+      "iloc",
+      "loc",
+      "series",
+      "data",
+      "analysis"
+    ],
+    "answer": "**pandas** is Python's go-to library for tabular data.\n\n```python\nimport pandas as pd\n\n# Load data\ndf = pd.read_csv('data.csv')\n\n# Inspect\ndf.head()           # first 5 rows\ndf.info()           # column types & nulls\ndf.describe()       # summary statistics\n\n# Select\ndf['age']                    # single column → Series\ndf[['name', 'age']]          # multiple columns → DataFrame\ndf.loc[df['age'] > 25]       # filter rows\ndf.iloc[0:5, 1:3]            # by position\n\n# Mutate\ndf['senior'] = df['age'] >= 60\ndf['age'] = df['age'].fillna(0)\n\n# Aggregate\ndf.groupby('city')['salary'].mean()\n\n# Sort & drop\ndf.sort_values('age', ascending=False)\ndf.drop_duplicates(subset=['email'])\n\n# Save\ndf.to_csv('output.csv', index=False)\n```\n\nInstall with `pip install pandas`."
+  }
+]
